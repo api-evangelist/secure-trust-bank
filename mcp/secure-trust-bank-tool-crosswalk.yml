@@ -1,0 +1,86 @@
+generated: '2026-07-23'
+method: derived
+source: mcp/secure-trust-bank-mcp.yml, openapi/ (OBIE Read/Write v4.0)
+note: >-
+  Binds each candidate MCP tool to its backing OBIE OpenAPI operationId. Every tool
+  inherits that operation's parameters + requestBody as its real inputSchema. There
+  is no live MCP server and no GraphQL surface, so mcp_only is empty; the candidate
+  tool set is a strict subset of the REST operations.
+surfaces:
+  openapi:
+    files:
+      - openapi/obie-account-info-standard-openapi.yaml
+      - openapi/obie-payment-initiation-standard-openapi.yaml
+      - openapi/obie-confirmation-of-funds-standard-openapi.yaml
+    gated: FAPI 1.0 Advanced - OAuth2 + mutual-TLS + PSU consent required to invoke
+  graphql: null
+  mcp:
+    url: null
+    status: candidate
+    gated: no hosted server published
+crosswalk:
+  - tool: create_account_access_consent
+    category: consent
+    rest: [CreateAccountAccessConsents]
+    binding: rest
+    confidence: high
+  - tool: list_accounts
+    category: accounts
+    rest: [GetAccounts]
+    binding: rest
+    confidence: high
+  - tool: get_account
+    category: accounts
+    rest: [GetAccountsAccountId]
+    binding: rest
+    confidence: high
+  - tool: get_account_balances
+    category: accounts
+    rest: [GetAccountsAccountIdBalances]
+    binding: rest
+    confidence: high
+  - tool: get_account_transactions
+    category: accounts
+    rest: [GetAccountsAccountIdTransactions]
+    binding: rest
+    confidence: high
+  - tool: create_domestic_payment_consent
+    category: payments
+    rest: [CreateDomesticPaymentConsents]
+    binding: rest
+    confidence: high
+  - tool: create_domestic_payment
+    category: payments
+    rest: [CreateDomesticPayments]
+    binding: rest
+    confidence: high
+    note: write operation; carries the x-idempotency-key header
+  - tool: get_domestic_payment
+    category: payments
+    rest: [GetDomesticPaymentsDomesticPaymentId]
+    binding: rest
+    confidence: high
+  - tool: create_funds_confirmation_consent
+    category: funds-confirmation
+    rest: [CreateFundsConfirmationConsents]
+    binding: rest
+    confidence: high
+  - tool: create_funds_confirmation
+    category: funds-confirmation
+    rest: [CreateFundsConfirmations]
+    binding: rest
+    confidence: high
+mcp_only: []
+rest_only:
+  - capability: account detail (beneficiaries, direct-debits, standing-orders, parties, statements, offers, products)
+    operations_approx: 20
+  - capability: scheduled / standing-order / international / file payments (PIS)
+    operations_approx: 30
+  - capability: consent read/delete lifecycle
+    operations_approx: 6
+coverage:
+  tools_named: 10
+  tools_bound: 10
+  mcp_only: 0
+  rest_ops_total: 74
+  rest_ops_with_tool: 10

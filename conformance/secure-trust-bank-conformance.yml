@@ -1,0 +1,44 @@
+generated: '2026-07-23'
+method: derived
+source: openapi/ (OBIE Read/Write v4.0 + Open Data v1.3 standard specifications)
+note: >-
+  Cross-cutting standards the OBIE specifications Secure Trust Bank's regulated
+  products conform to. Derived from the OpenAPI securitySchemes, headers, error
+  schema and path shapes - not an independent certification claim by Secure Trust Bank.
+standards:
+  - id: oauth2
+    conforms: true
+    evidence: securitySchemes TPPOAuth2Security (clientCredentials) + PSUOAuth2Security (authorizationCode)
+  - id: oidc
+    conforms: true
+    evidence: OBIE Security Profile builds on OpenID Connect for PSU authentication and SCA
+  - id: fapi
+    conforms: true
+    evidence: FAPI 1.0 Advanced profile - x-fapi-interaction-id, x-fapi-auth-date, x-fapi-customer-ip-address, x-jws-signature headers and mutual-TLS
+  - id: psd2
+    conforms: true
+    evidence: UK ASPSP under PSD2 - AIS/PIS/CBPII surfaces with SCA via the authorization-code flow
+  - id: obie-read-write-v4
+    conforms: true
+    evidence: paths and schemas match OBIE Read/Write Data API Specification v4.0 (aisp/pisp/cbpii)
+  - id: obie-open-data-v1.3
+    conforms: true
+    evidence: Open Data API for ATMs/branches/products per OBIE Open Data Standard v1.3
+  - id: idempotency
+    conforms: true
+    evidence: x-idempotency-key header on payment-creation operations (PIS)
+  - id: pagination
+    conforms: true
+    evidence: Links (Self/First/Prev/Next/Last) + Meta (TotalPages) response envelope
+  - id: mutual-tls
+    conforms: true
+    evidence: OBIE/eIDAS transport certificates required for TPP client authentication
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: errors use the OBIE OBErrorResponse1 envelope, not application/problem+json
+  - id: json-api
+    conforms: false
+  - id: scim
+    conforms: false
+  - id: fhir
+    conforms: false

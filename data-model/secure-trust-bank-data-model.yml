@@ -1,0 +1,96 @@
+generated: '2026-07-23'
+method: derived
+source: openapi/obie-account-info-standard-openapi.yaml, openapi/obie-payment-initiation-standard-openapi.yaml, openapi/obie-confirmation-of-funds-standard-openapi.yaml
+note: >-
+  Entity-relationship graph derived from the OBIE Read/Write v4.0 resource model.
+  Access to account and payment resources is always mediated by a consent resource
+  (the OBIE consent-then-access pattern).
+entities:
+  - name: AccountAccessConsent
+    domain: aisp
+    key: ConsentId
+    describes: PSU-granted permission set + expiry the TPP obtains before reading account data
+  - name: Account
+    domain: aisp
+    key: AccountId
+  - name: Balance
+    domain: aisp
+  - name: Transaction
+    domain: aisp
+  - name: Beneficiary
+    domain: aisp
+  - name: DirectDebit
+    domain: aisp
+  - name: StandingOrder
+    domain: aisp
+  - name: Party
+    domain: aisp
+  - name: Statement
+    domain: aisp
+  - name: Product
+    domain: aisp
+  - name: DomesticPaymentConsent
+    domain: pisp
+    key: ConsentId
+  - name: DomesticPayment
+    domain: pisp
+    key: DomesticPaymentId
+  - name: DomesticScheduledPayment
+    domain: pisp
+  - name: DomesticStandingOrder
+    domain: pisp
+  - name: InternationalPayment
+    domain: pisp
+  - name: FilePayment
+    domain: pisp
+  - name: FundsConfirmationConsent
+    domain: cbpii
+    key: ConsentId
+  - name: FundsConfirmation
+    domain: cbpii
+relationships:
+  - from: Account
+    type: belongs_to
+    to: AccountAccessConsent
+    via: ConsentId
+  - from: Balance
+    type: belongs_to
+    to: Account
+    via: AccountId
+  - from: Transaction
+    type: belongs_to
+    to: Account
+    via: AccountId
+  - from: Beneficiary
+    type: belongs_to
+    to: Account
+    via: AccountId
+  - from: DirectDebit
+    type: belongs_to
+    to: Account
+    via: AccountId
+  - from: StandingOrder
+    type: belongs_to
+    to: Account
+    via: AccountId
+  - from: Statement
+    type: belongs_to
+    to: Account
+    via: AccountId
+  - from: Party
+    type: belongs_to
+    to: Account
+    via: AccountId
+  - from: DomesticPayment
+    type: belongs_to
+    to: DomesticPaymentConsent
+    via: ConsentId
+  - from: DomesticScheduledPayment
+    type: belongs_to
+    to: DomesticPaymentConsent
+    via: ConsentId
+  - from: FundsConfirmation
+    type: belongs_to
+    to: FundsConfirmationConsent
+    via: ConsentId
+id_reference_fields: [ConsentId, AccountId, DomesticPaymentId, StatementId, TransactionId]

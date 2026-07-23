@@ -59,6 +59,8 @@ apis:
     url: https://openbankinguk.github.io/opendata-api-docs-pub/
   - type: APIReference
     url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Overlay
+    url: overlays/secure-trust-bank-open-data-overlay.yaml
 - aid: secure-trust-bank:account-transaction-information-api
   name: Secure Trust Bank Account & Transaction Information API (OBIE Read/Write, AIS)
   description: >-
@@ -81,6 +83,8 @@ apis:
     url: https://openbankinguk.github.io/read-write-api-site3/
   - type: APIReference
     url: https://github.com/OpenBankingUK/read-write-api-specs
+  - type: Overlay
+    url: overlays/secure-trust-bank-account-info-overlay.yaml
 - aid: secure-trust-bank:payment-initiation-api
   name: Secure Trust Bank Payment Initiation API (OBIE Read/Write, PIS)
   description: >-
@@ -101,6 +105,8 @@ apis:
     url: https://openbankinguk.github.io/read-write-api-site3/
   - type: APIReference
     url: https://github.com/OpenBankingUK/read-write-api-specs
+  - type: Overlay
+    url: overlays/secure-trust-bank-payment-initiation-overlay.yaml
 - aid: secure-trust-bank:confirmation-of-funds-api
   name: Secure Trust Bank Confirmation of Funds API (OBIE Read/Write, CBPII)
   description: >-
@@ -120,7 +126,39 @@ apis:
     url: https://openbankinguk.github.io/read-write-api-site3/
   - type: APIReference
     url: https://github.com/OpenBankingUK/read-write-api-specs
+  - type: Overlay
+    url: overlays/secure-trust-bank-confirmation-of-funds-overlay.yaml
 common:
+- type: AgenticAccess
+  url: agentic-access/secure-trust-bank-agentic-access.yml
+- type: DomainSecurity
+  url: security/secure-trust-bank-domain-security.yml
+- type: OAuthScopes
+  url: scopes/secure-trust-bank-scopes.yml
+- type: Authentication
+  url: authentication/secure-trust-bank-authentication.yml
+- type: Conventions
+  url: conventions/secure-trust-bank-conventions.yml
+- type: Idempotency
+  url: conventions/secure-trust-bank-conventions.yml
+- type: ErrorCatalog
+  url: errors/secure-trust-bank-problem-types.yml
+- type: Conformance
+  url: conformance/secure-trust-bank-conformance.yml
+- type: Lifecycle
+  url: lifecycle/secure-trust-bank-lifecycle.yml
+- type: Deprecation
+  url: https://standards.openbanking.org.uk/
+- type: DataModel
+  url: data-model/secure-trust-bank-data-model.yml
+- type: MCPServer
+  url: mcp/secure-trust-bank-mcp.yml
+- type: ToolCrosswalk
+  url: mcp/secure-trust-bank-tool-crosswalk.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: LLMsTxt
+  url: llms/secure-trust-bank-llms.txt
 - type: Website
   url: https://www.securetrustbank.com/
 - type: About

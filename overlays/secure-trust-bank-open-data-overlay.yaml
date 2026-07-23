@@ -1,0 +1,13 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Secure Trust Bank Open Data API
+  version: 1.0.0
+extends: openapi/obie-open-data-standard-openapi.json
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-provider: secure-trust-bank
+      x-apievangelist-standard: OBIE Read/Write / Open Data
+      x-apievangelist-note: >-
+        Shared OBIE standard specification the regulated Secure Trust Bank product
+        conforms to; not a proprietary Secure Trust Bank API contract.

@@ -1,0 +1,58 @@
+generated: '2026-07-23'
+method: derived
+source: openapi/obie-account-info-standard-openapi.yaml, openapi/obie-payment-initiation-standard-openapi.yaml, openapi/obie-confirmation-of-funds-standard-openapi.yaml
+format: obie-oberrorresponse1
+note: >-
+  HTTP error responses derived from the OBIE Read/Write v4.0 specifications. The error
+  body is not RFC 9457 problem+json; it is the OBIE OBErrorResponse1 envelope
+  (Code, Id, Message, Errors[]) where each Errors[] entry carries an ErrorCode drawn
+  from the UK.OBIE.* URN namespace (OBExternalStatusReason1Code), a Message, an
+  optional JSON Path, and an optional documentation Url.
+envelope:
+  schema: OBErrorResponse1
+  fields:
+    Code: High-level textual error code (deprecated in v4.0)
+    Id: Unique reference for the error instance, for audit purposes
+    Message: Brief error message
+    Errors: Array of {ErrorCode, Message, Path, Url}
+problems:
+  - status: 400
+    title: Bad request
+    description: Request failed OBIE schema/field validation; Errors[] carries UK.OBIE.* codes and JSON Paths.
+    schema: OBErrorResponse1
+  - status: 401
+    title: Unauthorized
+    description: Missing, invalid or expired access token, or failed FAPI/mutual-TLS client authentication.
+  - status: 403
+    title: Forbidden
+    description: Token lacks the required scope/consent, or the consent is revoked/expired.
+  - status: 404
+    title: Not found
+    description: Referenced resource (account, consent or payment id) does not exist or is not visible to the TPP.
+  - status: 405
+    title: Method not allowed
+    description: HTTP method not supported on the resource.
+  - status: 406
+    title: Not acceptable
+    description: Requested representation (Accept header) cannot be produced.
+  - status: 409
+    title: Conflict
+    description: Payment-order conflict, e.g. idempotency-key reuse with a differing payload (PIS).
+    source_operation: openapi/obie-payment-initiation-standard-openapi.yaml#CreateDomesticPayments
+  - status: 415
+    title: Unsupported media type
+    description: Request Content-Type is not application/json.
+  - status: 422
+    title: Unprocessable entity
+    description: Semantically invalid payment instruction (e.g. business-rule/limit failure) - PIS only.
+    schema: OBErrorResponse1
+    source_operation: openapi/obie-payment-initiation-standard-openapi.yaml#CreateDomesticPayments
+  - status: 429
+    title: Too many requests
+    description: ASPSP polling/rate limit exceeded.
+  - status: 500
+    title: Internal server error
+    description: Unexpected ASPSP-side error; Id can be quoted to the ASPSP for support.
+    schema: OBErrorResponse1
+error_code_namespace: UK.OBIE.*
+error_code_reference: https://openbankinguk.github.io/read-write-api-site3/v4.0/profiles/read-write-data-api-profile.html

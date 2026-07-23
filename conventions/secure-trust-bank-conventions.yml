@@ -1,0 +1,61 @@
+generated: '2026-07-23'
+method: derived
+source: openapi/obie-account-info-standard-openapi.yaml, openapi/obie-payment-initiation-standard-openapi.yaml, openapi/obie-confirmation-of-funds-standard-openapi.yaml
+note: >-
+  Cross-cutting request/response semantics derived from the OBIE Read/Write v4.0
+  specifications Secure Trust Bank's regulated Open Banking products conform to.
+  These are the shared UK Open Banking (OBL) conventions, not proprietary Secure
+  Trust Bank contracts.
+authentication:
+  style: oauth2
+  flows: [authorizationCode, clientCredentials]
+  profile: FAPI 1.0 Advanced (OBIE Security Profile)
+  client_auth: mutual-TLS (tls_client_auth / private_key_jwt); OBIE/eIDAS certificates required
+  message_signing: detached JWS via x-jws-signature header on write requests
+  sca: PSD2 Strong Customer Authentication via the PSU authorization-code flow
+  ref: authentication/secure-trust-bank-authentication.yml
+idempotency:
+  supported: true
+  header: x-idempotency-key
+  scope: payment-order and consent write operations (PIS)
+  max_length: 40
+  retention: >-
+    Per the OBIE standard an ASPSP persists the idempotency key for a minimum of
+    24 hours; a repeated key with an identical payload returns the original result.
+  note: >-
+    Present on CreateDomesticPayments and the other payment-creation operations in
+    the Payment Initiation spec; a mandatory field for POST payment resources.
+pagination:
+  style: page-based with hypermedia links
+  request_params: [page]
+  response_fields:
+    links: [Self, First, Prev, Next, Last]
+    meta: [TotalPages, FirstAvailableDateTime, LastAvailableDateTime]
+  note: Response envelopes carry a Links object and a Meta object; date windows bound transaction queries.
+request_tracing:
+  header: x-fapi-interaction-id
+  behaviour: TPP-supplied UUID echoed back by the ASPSP for end-to-end correlation
+fapi_headers:
+  - {header: x-fapi-interaction-id, purpose: interaction correlation id}
+  - {header: x-fapi-auth-date, purpose: time the PSU last logged in with the TPP}
+  - {header: x-fapi-customer-ip-address, purpose: PSU IP when present with the TPP}
+  - {header: x-jws-signature, purpose: detached JWS signature of the request/response body}
+versioning:
+  scheme: uri-path
+  current: v4.0
+  path_prefix: /open-banking/v4.0/{aisp|pisp|cbpii}
+  ref: lifecycle/secure-trust-bank-lifecycle.yml
+error_envelope:
+  schema: OBErrorResponse1
+  media_type: application/json
+  shape:
+    Code: high-level textual code (deprecated in v4.0)
+    Id: unique error instance reference for audit
+    Message: brief error message
+    Errors: array of {ErrorCode (OBExternalStatusReason1Code / UK.OBIE.* urn), Message, Path, Url}
+  ref: errors/secure-trust-bank-problem-types.yml
+rate_limiting:
+  signalled_by: HTTP 429 Too Many Requests
+  note: >-
+    OBIE mandates ASPSP-side polling/rate controls (e.g. transaction polling limits)
+    but does not standardise RateLimit-* response headers; limits are ASPSP-specific.

@@ -1,0 +1,19 @@
+generated: '2026-07-23'
+method: generated
+note: >-
+  Agent Skills grounded in the OBIE Read/Write v4.0 operations Secure Trust Bank's
+  regulated products conform to. Every step references a real operationId verified in
+  the openapi/ specs. Live execution requires FAPI/mutual-TLS onboarding and PSU consent.
+skills:
+  - file: secure-trust-bank-read-account-information.md
+    name: Read account information with consent (AIS)
+    api: openapi/obie-account-info-standard-openapi.yaml
+    operations: [CreateAccountAccessConsents, GetAccountAccessConsentsConsentId, GetAccounts, GetAccountsAccountIdBalances, GetAccountsAccountIdTransactions]
+  - file: secure-trust-bank-initiate-domestic-payment.md
+    name: Initiate a domestic payment (PIS)
+    api: openapi/obie-payment-initiation-standard-openapi.yaml
+    operations: [CreateDomesticPaymentConsents, GetDomesticPaymentConsentsConsentId, CreateDomesticPayments, GetDomesticPaymentsDomesticPaymentId]
+  - file: secure-trust-bank-confirm-funds.md
+    name: Confirm funds availability (CBPII)
+    api: openapi/obie-confirmation-of-funds-standard-openapi.yaml
+    operations: [CreateFundsConfirmationConsents, CreateFundsConfirmations]

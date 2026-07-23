@@ -1,0 +1,32 @@
+# Secure Trust Bank
+
+> Secure Trust Bank PLC is an award-winning UK specialist bank (LSE: STB), founded 1952, headquartered in Solihull, providing savings and specialist lending to over a million customers. As a UK ASPSP under PSD2 and the CMA Open Banking framework, its regulated account and payment products conform to the OBIE Read/Write and Open Data standards. Secure Trust Bank is a specialist lender (not a CMA9 bank) and publishes no bank-branded Open Banking developer portal; the API surfaces below reference the shared OBIE standard specifications its products conform to.
+
+## APIs
+- [Open Data API (OBIE v1.3)](https://openbankinguk.github.io/opendata-api-docs-pub/): Public reference data - ATMs, branches, product information.
+- [Account & Transaction Information API (OBIE R/W v4.0, AIS)](https://openbankinguk.github.io/read-write-api-site3/): FAPI-secured account, balance, transaction, standing-order and statement data with PSU consent.
+- [Payment Initiation API (OBIE R/W v4.0, PIS)](https://openbankinguk.github.io/read-write-api-site3/): FAPI-secured domestic, scheduled, standing-order, international and file payments.
+- [Confirmation of Funds API (OBIE R/W v4.0, CBPII)](https://openbankinguk.github.io/read-write-api-site3/): FAPI-secured yes/no funds-available confirmation for card issuers.
+
+## Specs
+- Open Data OpenAPI: openapi/obie-open-data-standard-openapi.json
+- Account Info OpenAPI: openapi/obie-account-info-standard-openapi.yaml
+- Payment Initiation OpenAPI: openapi/obie-payment-initiation-standard-openapi.yaml
+- Confirmation of Funds OpenAPI: openapi/obie-confirmation-of-funds-standard-openapi.yaml
+
+## Artifacts
+- Authentication: authentication/secure-trust-bank-authentication.yml (OAuth2 authorizationCode + clientCredentials, FAPI, mutual-TLS)
+- OAuth scopes: scopes/secure-trust-bank-scopes.yml (accounts, payments, fundsconfirmations)
+- Conventions: conventions/secure-trust-bank-conventions.yml (idempotency x-idempotency-key, pagination, FAPI headers)
+- Errors: errors/secure-trust-bank-problem-types.yml (OBErrorResponse1 envelope)
+- Conformance: conformance/secure-trust-bank-conformance.yml (oauth2, oidc, fapi, psd2, mutual-TLS)
+- Data model: data-model/secure-trust-bank-data-model.yml
+- Lifecycle: lifecycle/secure-trust-bank-lifecycle.yml (OBIE v4.0 versioning)
+- MCP (candidate): mcp/secure-trust-bank-mcp.yml
+- Agent skills: skills/_index.yml
+
+## Docs
+- [OBIE Read/Write standard](https://openbankinguk.github.io/read-write-api-site3/)
+- [OBIE Open Data standard](https://openbankinguk.github.io/opendata-api-docs-pub/)
+- [UK Open Banking](https://www.openbanking.org.uk/)
+- [Secure Trust Bank](https://www.securetrustbank.com/)

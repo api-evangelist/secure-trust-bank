@@ -1,0 +1,16 @@
+generated: '2026-07-23'
+method: searched
+host: https://www.securetrustbank.com
+note: >-
+  Secure Trust Bank's corporate site returns HTTP 403 (WAF) to automated probes of
+  the /.well-known/ discovery surface, and the bank publishes no proprietary Open
+  Banking developer host. No machine-readable discovery documents were retrievable.
+documents:
+  - path: /.well-known/security.txt
+    status: 403
+  - path: /.well-known/openid-configuration
+    status: 403
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+  - path: /.well-known/api-catalog
+    status: 403

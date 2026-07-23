@@ -1,0 +1,31 @@
+generated: '2026-07-23'
+method: searched
+source: https://openbankinguk.github.io/read-write-api-site3/
+note: >-
+  Versioning and lifecycle reflect the shared OBIE Read/Write standard Secure Trust
+  Bank's products conform to. Secure Trust Bank publishes no bank-branded developer
+  status page; the operational surface is governed by the OBIE (Open Banking Limited)
+  standard release process.
+versioning:
+  scheme: uri-path
+  current: v4.0
+  path_prefix: /open-banking/v4.0/{aisp|pisp|cbpii}
+  open_data_version: v1.3
+  docs: https://openbankinguk.github.io/read-write-api-site3/
+deprecation:
+  policy: >-
+    OBIE (Open Banking Limited) governs versioning and deprecation of the Read/Write
+    standard through dated standard releases; superseded major versions are retired on
+    published OBIE timelines. Individual fields (e.g. OBErrorResponse1.Code / .Message)
+    are marked Deprecated in the v4.0 schemas.
+  policy_url: https://standards.openbanking.org.uk/
+  sunset_header: false
+sla:
+  note: >-
+    Availability and performance are set by the ASPSP under FCA/PRA operational-resilience
+    rules and OBIE MI reporting; no bank-published API uptime target was found.
+status_page: null
+deprecated_operations: []
+deprecated_fields:
+  - OBErrorResponse1.Code
+  - OBErrorResponse1.Message
