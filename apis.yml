@@ -1,0 +1,144 @@
+aid: secure-trust-bank
+url: https://raw.githubusercontent.com/api-evangelist/secure-trust-bank/refs/heads/main/apis.yml
+name: Secure Trust Bank
+kind: company
+description: >-
+  Secure Trust Bank PLC is an award-winning UK specialist bank, founded in 1952
+  in the West Midlands and headquartered in Solihull, providing savings accounts
+  and specialist lending to over a million retail and business customers. It is a
+  publicly listed company (London Stock Exchange: STB) rather than a mutual or
+  building society, operating across Retail Finance (V12), Vehicle Finance,
+  Real Estate Finance, Commercial Finance and personal Savings. It is authorised
+  by the Prudential Regulation Authority and regulated by the Financial Conduct
+  Authority and the PRA (FRN 204550). As a UK ASPSP under PSD2 and the CMA Open
+  Banking framework, its account offerings sit against the Open Banking
+  Implementation Entity (OBIE) standards - a public, unauthenticated Open Data
+  reference surface (ATMs, branches, products) and the FAPI-secured Read/Write
+  APIs for Account and Transaction Information, Payment Initiation and
+  Confirmation of Funds. Secure Trust Bank is a specialist lender and not one of
+  the nine CMA9-mandated banks; as of this review it publishes no public
+  developer portal or bank-branded Open Banking developer host, so the API
+  surfaces below reference the shared OBIE standard specifications the bank's
+  regulated products conform to, not proprietary Secure Trust Bank API contracts.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Financial Services
+- Banking
+- Open Banking
+- PSD2
+- OBIE
+- United Kingdom
+- Payments
+- Account Information
+- Specialist Lender
+- Savings
+created: '2026-07-23'
+modified: '2026-07-23'
+specificationVersion: '0.19'
+apis:
+- aid: secure-trust-bank:open-data-api
+  name: Secure Trust Bank Open Data API (OBIE Standard)
+  description: >-
+    The UK Open Banking Open Data API - a public, unauthenticated reference-data
+    surface for ATMs, branches and product information (Personal Current Accounts,
+    Business Current Accounts, Unsecured SME Loans, Commercial Credit Cards, etc.)
+    defined by the OBIE Open Data Standard v1.3. Represented here as the shared
+    standard Secure Trust Bank's products conform to; no Secure Trust Bank Open
+    Data host was confirmed live at review time.
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
+  tags:
+  - Open Data
+  - Reference Data
+  - ATMs
+  - Branches
+  - Products
+  properties:
+  - type: OpenAPI
+    url: openapi/obie-open-data-standard-openapi.json
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+- aid: secure-trust-bank:account-transaction-information-api
+  name: Secure Trust Bank Account & Transaction Information API (OBIE Read/Write, AIS)
+  description: >-
+    The OBIE Read/Write Account and Transaction Information (AIS) API - FAPI-secured
+    access to account, balance, transaction, standing order, direct debit and
+    statement data with customer consent. FAPI-grade OAuth2/OIDC, mutual-TLS client
+    authentication and PSD2 strong customer authentication apply; onboarding
+    requires OBIE/eIDAS certificates. Represented here as the shared OBIE standard,
+    not a proprietary Secure Trust Bank contract.
+  humanURL: https://openbankinguk.github.io/read-write-api-site3/
+  tags:
+  - Account Information
+  - AIS
+  - Transactions
+  - FAPI
+  properties:
+  - type: OpenAPI
+    url: openapi/obie-account-info-standard-openapi.yaml
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: secure-trust-bank:payment-initiation-api
+  name: Secure Trust Bank Payment Initiation API (OBIE Read/Write, PIS)
+  description: >-
+    The OBIE Read/Write Payment Initiation (PIS) API - FAPI-secured initiation of
+    domestic, scheduled, standing-order, international and file payments on behalf
+    of a consenting customer, with PSD2 strong customer authentication. Represented
+    here as the shared OBIE standard, not a proprietary Secure Trust Bank contract.
+  humanURL: https://openbankinguk.github.io/read-write-api-site3/
+  tags:
+  - Payment Initiation
+  - PIS
+  - Payments
+  - FAPI
+  properties:
+  - type: OpenAPI
+    url: openapi/obie-payment-initiation-standard-openapi.yaml
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: secure-trust-bank:confirmation-of-funds-api
+  name: Secure Trust Bank Confirmation of Funds API (OBIE Read/Write, CBPII)
+  description: >-
+    The OBIE Read/Write Confirmation of Funds (CBPII) API - FAPI-secured yes/no
+    confirmation that funds are available on an account, for card-based payment
+    instrument issuers, under PSD2 strong customer authentication. Represented here
+    as the shared OBIE standard, not a proprietary Secure Trust Bank contract.
+  humanURL: https://openbankinguk.github.io/read-write-api-site3/
+  tags:
+  - Confirmation of Funds
+  - CBPII
+  - FAPI
+  properties:
+  - type: OpenAPI
+    url: openapi/obie-confirmation-of-funds-standard-openapi.yaml
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+common:
+- type: Website
+  url: https://www.securetrustbank.com/
+- type: About
+  url: https://www.securetrustbank.com/about-us
+- type: Blog
+  url: https://www.securetrustbank.com/newsroom
+- type: Security
+  url: https://www.securetrustbank.com/security
+- type: Support
+  url: https://www.securetrustbank.com/contact-us
+- type: TermsOfService
+  url: https://www.securetrustbank.com/website-terms
+- type: PrivacyPolicy
+  url: https://www.securetrustbank.com/privacy-statement
+- type: LinkedIn
+  url: https://www.linkedin.com/company/secure-trust-bank
+- type: OpenBankingStandard
+  url: https://www.openbanking.org.uk/
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

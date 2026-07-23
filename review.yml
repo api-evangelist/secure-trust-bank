@@ -1,0 +1,92 @@
+aid: secure-trust-bank
+name: Secure Trust Bank
+review:
+  question: Does Secure Trust Bank publish a public developer portal, a live Open Data endpoint, and bank-proprietary Open Banking Read/Write API specifications?
+  answer: false
+  date: '2026-07-23'
+  reviewer: API Evangelist
+findings:
+  summary: |
+    Secure Trust Bank PLC is a UK-listed specialist bank (LSE: STB, FCA/PRA FRN
+    204550) offering savings and specialist lending (Retail Finance/V12, Vehicle
+    Finance, Real Estate Finance, Commercial Finance). It is NOT a CMA9-mandated
+    bank. As of this review it exposes NO public developer portal, NO
+    bank-branded Open Banking developer host, and NO discoverable API host.
+    Probes of the conventional bank Open Banking hosts and Open Data path shapes
+    did not resolve, and no live Open Data endpoint (HTTP 200 + JSON) could be
+    confirmed. The bank's corporate website (www.securetrustbank.com) resolves
+    (200) with legal/security/contact pages but links to no API resources.
+    Because Secure Trust Bank publishes no proprietary API contracts, the four
+    API entries in apis.yml reference the shared Open Banking Implementation
+    Entity (OBIE) STANDARD specifications the bank's regulated products conform
+    to - harvested verbatim from the official OpenBankingUK GitHub
+    repositories - and are explicitly labelled as the shared standard, not
+    Secure Trust Bank contracts.
+  developerPortalConfirmed: false
+  developerPortalUrl: ""
+  openDataEndpointConfirmed: false
+  openDataBaseUrl: ""
+  cma9: false
+  specProvenance: OBIE-standard
+  authModel:
+    openData: none (public, unauthenticated reference data per OBIE Open Data Standard v1.3)
+    readWrite: FAPI-grade OAuth2/OIDC + mutual-TLS (mTLS) client authentication + PSD2 strong customer authentication (SCA); onboarding requires OBIE/eIDAS certificates and directory participation
+  transports:
+    - protocol: REST
+      scheme: https
+      note: OBIE Open Data is public REST/JSON; OBIE Read/Write is FAPI-secured REST/JSON. No Secure Trust Bank base URL is published.
+      documented: true
+      bankHostConfirmed: false
+  probes:
+    - url: https://api.securetrustbank.com/open-banking/v2.3/atms
+      status: 000
+      note: Host did not resolve.
+    - url: https://api.securetrustbank.com/open-banking/v3.1/atms
+      status: 000
+      note: Host did not resolve.
+    - url: https://openbanking.securetrustbank.com/
+      status: 000
+      note: Host did not resolve.
+    - url: https://developer.securetrustbank.com/
+      status: 000
+      note: Host did not resolve - no developer portal.
+    - url: https://securetrustbank.com/.well-known/open-banking
+      status: 301
+      note: Redirects to www; no well-known Open Banking metadata served (404 at target).
+    - url: https://www.securetrustbank.com/
+      status: 200
+      note: Corporate site; self-describes as an award-winning UK retail bank providing savings and lending. No API/developer/Open Banking links in footer.
+  harvestedSpecs:
+    - path: openapi/obie-open-data-standard-openapi.json
+      title: Open Data API
+      version: v1.3
+      format: Swagger 2.0
+      provenance: OpenBankingUK/opendata-api-spec-compiled (shared OBIE standard, NOT a Secure Trust Bank contract)
+    - path: openapi/obie-account-info-standard-openapi.yaml
+      title: Account and Transaction API Specification (AIS)
+      format: OpenAPI 3.0.0
+      provenance: OpenBankingUK/read-write-api-specs (shared OBIE standard, NOT a Secure Trust Bank contract)
+    - path: openapi/obie-payment-initiation-standard-openapi.yaml
+      title: Payment Initiation API (PIS)
+      format: OpenAPI 3.0.0
+      provenance: OpenBankingUK/read-write-api-specs (shared OBIE standard, NOT a Secure Trust Bank contract)
+    - path: openapi/obie-confirmation-of-funds-standard-openapi.yaml
+      title: Confirmation of Funds API Specification (CBPII)
+      format: OpenAPI 3.0.0
+      provenance: OpenBankingUK/read-write-api-specs (shared OBIE standard, NOT a Secure Trust Bank contract)
+sources:
+  - url: https://www.securetrustbank.com/
+    type: Website
+    note: Company self-description and footer link inventory; no API resources.
+  - url: https://github.com/OpenBankingUK/read-write-api-specs
+    type: APIReference
+    note: Official OBIE Read/Write standard specs (AIS, PIS, CBPII) harvested verbatim.
+  - url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+    type: APIReference
+    note: Official OBIE Open Data standard spec harvested verbatim.
+  - url: https://openbankinguk.github.io/read-write-api-site3/
+    type: Documentation
+    note: OBIE Read/Write standard documentation.
+  - url: https://openbankinguk.github.io/opendata-api-docs-pub/
+    type: Documentation
+    note: OBIE Open Data standard documentation.
