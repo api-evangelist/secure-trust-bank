@@ -34,7 +34,7 @@ tags:
 - Savings
 created: '2026-07-23'
 modified: '2026-07-23'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: secure-trust-bank:open-data-api
   name: Secure Trust Bank Open Data API (OBIE Standard)
