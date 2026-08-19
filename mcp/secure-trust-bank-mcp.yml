@@ -2,44 +2,48 @@ generated: '2026-07-23'
 method: derived
 status: candidate
 source: openapi/ (OBIE Read/Write v4.0 operations)
-note: >-
-  No official hosted MCP server was found for Secure Trust Bank (a specialist lender
-  that publishes no bank-branded Open Banking developer surface). This is a CANDIDATE
-  tool list derived from the OBIE Read/Write v4.0 operations the bank's regulated
-  products conform to; every tool's real inputSchema is the backing operation's
-  parameters + requestBody. Live invocation requires FAPI/mutual-TLS + PSU consent.
+note: No official hosted MCP server was found for Secure Trust Bank (a specialist lender that publishes
+  no bank-branded Open Banking developer surface). This is a CANDIDATE tool list derived from the OBIE
+  Read/Write v4.0 operations the bank's regulated products conform to; every tool's real inputSchema is
+  the backing operation's parameters + requestBody. Live invocation requires FAPI/mutual-TLS + PSU consent.
 server:
   name: secure-trust-bank
   transport: http
   url: null
 tools:
-  - name: create_account_access_consent
-    description: Create an account-access consent (AIS) for a PSU
-    source_operation: openapi/obie-account-info-standard-openapi.yaml#CreateAccountAccessConsents
-  - name: list_accounts
-    description: List the PSU's accounts under an approved consent
-    source_operation: openapi/obie-account-info-standard-openapi.yaml#GetAccounts
-  - name: get_account
-    description: Get a single account by id
-    source_operation: openapi/obie-account-info-standard-openapi.yaml#GetAccountsAccountId
-  - name: get_account_balances
-    description: Get balances for an account
-    source_operation: openapi/obie-account-info-standard-openapi.yaml#GetAccountsAccountIdBalances
-  - name: get_account_transactions
-    description: Get transactions for an account
-    source_operation: openapi/obie-account-info-standard-openapi.yaml#GetAccountsAccountIdTransactions
-  - name: create_domestic_payment_consent
-    description: Create a domestic payment consent (PIS)
-    source_operation: openapi/obie-payment-initiation-standard-openapi.yaml#CreateDomesticPaymentConsents
-  - name: create_domestic_payment
-    description: Initiate a domestic payment against an approved consent (uses x-idempotency-key)
-    source_operation: openapi/obie-payment-initiation-standard-openapi.yaml#CreateDomesticPayments
-  - name: get_domestic_payment
-    description: Get the status of a submitted domestic payment
-    source_operation: openapi/obie-payment-initiation-standard-openapi.yaml#GetDomesticPaymentsDomesticPaymentId
-  - name: create_funds_confirmation_consent
-    description: Create a confirmation-of-funds consent (CBPII)
-    source_operation: openapi/obie-confirmation-of-funds-standard-openapi.yaml#CreateFundsConfirmationConsents
-  - name: create_funds_confirmation
-    description: Confirm whether funds are available on an account (yes/no)
-    source_operation: openapi/obie-confirmation-of-funds-standard-openapi.yaml#CreateFundsConfirmations
+- name: create_account_access_consent
+  description: Create an account-access consent (AIS) for a PSU
+  source_operation: openapi/obie-account-info-standard-openapi.yaml#CreateAccountAccessConsents
+- name: list_accounts
+  description: List the PSU's accounts under an approved consent
+  source_operation: openapi/obie-account-info-standard-openapi.yaml#GetAccounts
+- name: get_account
+  description: Get a single account by id
+  source_operation: openapi/obie-account-info-standard-openapi.yaml#GetAccountsAccountId
+- name: get_account_balances
+  description: Get balances for an account
+  source_operation: openapi/obie-account-info-standard-openapi.yaml#GetAccountsAccountIdBalances
+- name: get_account_transactions
+  description: Get transactions for an account
+  source_operation: openapi/obie-account-info-standard-openapi.yaml#GetAccountsAccountIdTransactions
+- name: create_domestic_payment_consent
+  description: Create a domestic payment consent (PIS)
+  source_operation: openapi/obie-payment-initiation-standard-openapi.yaml#CreateDomesticPaymentConsents
+- name: create_domestic_payment
+  description: Initiate a domestic payment against an approved consent (uses x-idempotency-key)
+  source_operation: openapi/obie-payment-initiation-standard-openapi.yaml#CreateDomesticPayments
+- name: get_domestic_payment
+  description: Get the status of a submitted domestic payment
+  source_operation: openapi/obie-payment-initiation-standard-openapi.yaml#GetDomesticPaymentsDomesticPaymentId
+- name: create_funds_confirmation_consent
+  description: Create a confirmation-of-funds consent (CBPII)
+  source_operation: openapi/obie-confirmation-of-funds-standard-openapi.yaml#CreateFundsConfirmationConsents
+- name: create_funds_confirmation
+  description: Confirm whether funds are available on an account (yes/no)
+  source_operation: openapi/obie-confirmation-of-funds-standard-openapi.yaml#CreateFundsConfirmations
+deployment:
+  mode: none
+  verified: derived
+  tools: 10
+  checked: '2026-08-12'
+  source: catalog MCP census
