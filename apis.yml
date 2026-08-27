@@ -47,110 +47,618 @@ created: '2026-07-23'
 modified: '2026-07-23'
 specificationVersion: '0.23'
 apis:
-- aid: secure-trust-bank:open-data-api
-  name: Secure Trust Bank Open Data API (OBIE Standard)
+- aid: secure-trust-bank:secure-trust-bank-account-access-consents-api
+  name: Secure Trust Bank Account Access Consents API
   description: >-
-    The UK Open Banking Open Data API - a public, unauthenticated reference-data
-    surface for ATMs, branches and product information (Personal Current Accounts,
-    Business Current Accounts, Unsecured SME Loans, Commercial Credit Cards, etc.)
-    defined by the OBIE Open Data Standard v1.3. Represented here as the shared
-    standard Secure Trust Bank's products conform to; no Secure Trust Bank Open
-    Data host was confirmed live at review time.
+    The Account Access Consents API from Secure Trust Bank — 2 operation(s) for account access consents.
   humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
   tags:
-  - Open Data
-  - Reference Data
-  - ATMs
-  - Branches
-  - Product
-  tags_raw:
-  - Open Data
-  - Reference Data
-  - ATMs
-  - Branches
-  - Products
+  - Account Access Consents
   properties:
   - type: OpenAPI
-    url: openapi/obie-open-data-standard-openapi.json
+    url: openapi/secure-trust-bank-account-access-consents-api-openapi.yml
   - type: Documentation
     url: https://openbankinguk.github.io/opendata-api-docs-pub/
   - type: APIReference
     url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
-  - type: Overlay
-    url: overlays/secure-trust-bank-open-data-overlay.yaml
-- aid: secure-trust-bank:account-transaction-information-api
-  name: Secure Trust Bank Account & Transaction Information API (OBIE Read/Write, AIS)
-  description: >-
-    The OBIE Read/Write Account and Transaction Information (AIS) API - FAPI-secured
-    access to account, balance, transaction, standing order, direct debit and
-    statement data with customer consent. FAPI-grade OAuth2/OIDC, mutual-TLS client
-    authentication and PSD2 strong customer authentication apply; onboarding
-    requires OBIE/eIDAS certificates. Represented here as the shared OBIE standard,
-    not a proprietary Secure Trust Bank contract.
-  humanURL: https://openbankinguk.github.io/read-write-api-site3/
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: secure-trust-bank:secure-trust-bank-accounts-api
+  name: Secure Trust Bank Accounts API
+  description: The Accounts API from Secure Trust Bank — 2 operation(s) for accounts.
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
   tags:
-  - Account Information
-  - AIS
-  - Transaction
-  - FAPI
-  tags_raw:
-  - Account Information
-  - AIS
+  - Accounts
+  properties:
+  - type: OpenAPI
+    url: openapi/secure-trust-bank-accounts-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: secure-trust-bank:secure-trust-bank-atm-api
+  name: Secure Trust Bank ATM API
+  description: Endpoint for getting ATM data
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
+  tags:
+  - ATM
+  properties:
+  - type: OpenAPI
+    url: openapi/secure-trust-bank-atm-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: secure-trust-bank:secure-trust-bank-balances-api
+  name: Secure Trust Bank Balances API
+  description: The Balances API from Secure Trust Bank — 2 operation(s) for balances.
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
+  tags:
+  - Balances
+  properties:
+  - type: OpenAPI
+    url: openapi/secure-trust-bank-balances-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: secure-trust-bank:secure-trust-bank-bca-api
+  name: Secure Trust Bank BCA API
+  description: Endpoint for getting Business Current Account data
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
+  tags:
+  - BCA
+  properties:
+  - type: OpenAPI
+    url: openapi/secure-trust-bank-bca-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: secure-trust-bank:secure-trust-bank-beneficiaries-api
+  name: Secure Trust Bank Beneficiaries API
+  description: The Beneficiaries API from Secure Trust Bank — 2 operation(s) for beneficiaries.
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
+  tags:
+  - Beneficiaries
+  properties:
+  - type: OpenAPI
+    url: openapi/secure-trust-bank-beneficiaries-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: secure-trust-bank:secure-trust-bank-branch-api
+  name: Secure Trust Bank Branch API
+  description: Endpoint for getting Branch data
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
+  tags:
+  - Branch
+  properties:
+  - type: OpenAPI
+    url: openapi/secure-trust-bank-branch-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: secure-trust-bank:secure-trust-bank-ccc-api
+  name: Secure Trust Bank CCC API
+  description: Endpoint for getting Commercial Credit Card data
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
+  tags:
+  - CCC
+  properties:
+  - type: OpenAPI
+    url: openapi/secure-trust-bank-ccc-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: secure-trust-bank:secure-trust-bank-direct-debits-api
+  name: Secure Trust Bank Direct Debits API
+  description: The Direct Debits API from Secure Trust Bank — 2 operation(s) for direct debits.
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
+  tags:
+  - Direct Debits
+  properties:
+  - type: OpenAPI
+    url: openapi/secure-trust-bank-direct-debits-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: secure-trust-bank:secure-trust-bank-domestic-payment-consents-api
+  name: Secure Trust Bank Domestic Payment Consents API
+  description: >-
+    The Domestic Payment Consents API from Secure Trust Bank — 3 operation(s) for domestic payment consents.
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
+  tags:
+  - Domestic Payment Consents
+  properties:
+  - type: OpenAPI
+    url: openapi/secure-trust-bank-domestic-payment-consents-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: secure-trust-bank:secure-trust-bank-domestic-payments-api
+  name: Secure Trust Bank Domestic Payments API
+  description: The Domestic Payments API from Secure Trust Bank — 3 operation(s) for domestic payments.
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
+  tags:
+  - Domestic Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/secure-trust-bank-domestic-payments-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: secure-trust-bank:secure-trust-bank-domestic-scheduled-payment-consents-api
+  name: Secure Trust Bank Domestic Scheduled Payment Consents API
+  description: >-
+    The Domestic Scheduled Payment Consents API from Secure Trust Bank — 2 operation(s) for domestic scheduled
+    payment consents.
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
+  tags:
+  - Domestic Scheduled Payment Consents
+  properties:
+  - type: OpenAPI
+    url: openapi/secure-trust-bank-domestic-scheduled-payment-consents-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: secure-trust-bank:secure-trust-bank-domestic-scheduled-payments-api
+  name: Secure Trust Bank Domestic Scheduled Payments API
+  description: >-
+    The Domestic Scheduled Payments API from Secure Trust Bank — 3 operation(s) for domestic scheduled
+    payments.
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
+  tags:
+  - Domestic Scheduled Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/secure-trust-bank-domestic-scheduled-payments-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: secure-trust-bank:secure-trust-bank-domestic-standing-order-consents-api
+  name: Secure Trust Bank Domestic Standing Order Consents API
+  description: >-
+    The Domestic Standing Order Consents API from Secure Trust Bank — 2 operation(s) for domestic standing
+    order consents.
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
+  tags:
+  - Domestic Standing Order Consents
+  properties:
+  - type: OpenAPI
+    url: openapi/secure-trust-bank-domestic-standing-order-consents-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: secure-trust-bank:secure-trust-bank-domestic-standing-orders-api
+  name: Secure Trust Bank Domestic Standing Orders API
+  description: >-
+    The Domestic Standing Orders API from Secure Trust Bank — 3 operation(s) for domestic standing orders.
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
+  tags:
+  - Domestic Standing Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/secure-trust-bank-domestic-standing-orders-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: secure-trust-bank:secure-trust-bank-file-payment-consents-api
+  name: Secure Trust Bank File Payment Consents API
+  description: >-
+    The File Payment Consents API from Secure Trust Bank — 3 operation(s) for file payment consents.
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
+  tags:
+  - File Payment Consents
+  properties:
+  - type: OpenAPI
+    url: openapi/secure-trust-bank-file-payment-consents-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: secure-trust-bank:secure-trust-bank-file-payments-api
+  name: Secure Trust Bank File Payments API
+  description: The File Payments API from Secure Trust Bank — 4 operation(s) for file payments.
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
+  tags:
+  - File Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/secure-trust-bank-file-payments-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: secure-trust-bank:secure-trust-bank-funds-confirmation-consents-api
+  name: Secure Trust Bank Funds Confirmation Consents API
+  description: >-
+    The Funds Confirmation Consents API from Secure Trust Bank — 2 operation(s) for funds confirmation
+    consents.
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
+  tags:
+  - Funds Confirmation Consents
+  properties:
+  - type: OpenAPI
+    url: openapi/secure-trust-bank-funds-confirmation-consents-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: secure-trust-bank:secure-trust-bank-funds-confirmations-api
+  name: Secure Trust Bank Funds Confirmations API
+  description: >-
+    The Funds Confirmations API from Secure Trust Bank — 1 operation(s) for funds confirmations.
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
+  tags:
+  - Funds Confirmations
+  properties:
+  - type: OpenAPI
+    url: openapi/secure-trust-bank-funds-confirmations-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: secure-trust-bank:secure-trust-bank-international-payment-consents-api
+  name: Secure Trust Bank International Payment Consents API
+  description: >-
+    The International Payment Consents API from Secure Trust Bank — 3 operation(s) for international payment
+    consents.
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
+  tags:
+  - International Payment Consents
+  properties:
+  - type: OpenAPI
+    url: openapi/secure-trust-bank-international-payment-consents-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: secure-trust-bank:secure-trust-bank-international-payments-api
+  name: Secure Trust Bank International Payments API
+  description: >-
+    The International Payments API from Secure Trust Bank — 3 operation(s) for international payments.
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
+  tags:
+  - International Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/secure-trust-bank-international-payments-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: secure-trust-bank:secure-trust-bank-international-scheduled-payments-api
+  name: Secure Trust Bank International Scheduled Payments API
+  description: >-
+    The International Scheduled Payments API from Secure Trust Bank — 3 operation(s) for international
+    scheduled payments.
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
+  tags:
+  - International Scheduled Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/secure-trust-bank-international-scheduled-payments-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: secure-trust-bank:secure-trust-bank-international-scheduled-payments-consents-api
+  name: Secure Trust Bank International Scheduled Payments Consents API
+  description: >-
+    The International Scheduled Payments Consents API from Secure Trust Bank — 3 operation(s) for international
+    scheduled payments consents.
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
+  tags:
+  - International Scheduled Payments Consents
+  properties:
+  - type: OpenAPI
+    url: openapi/secure-trust-bank-international-scheduled-payments-consents-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: secure-trust-bank:secure-trust-bank-international-standing-orders-api
+  name: Secure Trust Bank International Standing Orders API
+  description: >-
+    The International Standing Orders API from Secure Trust Bank — 3 operation(s) for international standing
+    orders.
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
+  tags:
+  - International Standing Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/secure-trust-bank-international-standing-orders-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: secure-trust-bank:secure-trust-bank-international-standing-orders-consents-api
+  name: Secure Trust Bank International Standing Orders Consents API
+  description: >-
+    The International Standing Orders Consents API from Secure Trust Bank — 2 operation(s) for international
+    standing orders consents.
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
+  tags:
+  - International Standing Orders Consents
+  properties:
+  - type: OpenAPI
+    url: openapi/secure-trust-bank-international-standing-orders-consents-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: secure-trust-bank:secure-trust-bank-offers-api
+  name: Secure Trust Bank Offers API
+  description: The Offers API from Secure Trust Bank — 2 operation(s) for offers.
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
+  tags:
+  - Offers
+  properties:
+  - type: OpenAPI
+    url: openapi/secure-trust-bank-offers-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: secure-trust-bank:secure-trust-bank-parties-api
+  name: Secure Trust Bank Parties API
+  description: The Parties API from Secure Trust Bank — 3 operation(s) for parties.
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
+  tags:
+  - Parties
+  properties:
+  - type: OpenAPI
+    url: openapi/secure-trust-bank-parties-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: secure-trust-bank:secure-trust-bank-pca-api
+  name: Secure Trust Bank PCA API
+  description: Endpoint for getting Personal Current Account data
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
+  tags:
+  - PCA
+  properties:
+  - type: OpenAPI
+    url: openapi/secure-trust-bank-pca-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: secure-trust-bank:secure-trust-bank-products-api
+  name: Secure Trust Bank Products API
+  description: The Products API from Secure Trust Bank — 2 operation(s) for products.
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
+  tags:
+  - Products
+  properties:
+  - type: OpenAPI
+    url: openapi/secure-trust-bank-products-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: secure-trust-bank:secure-trust-bank-scheduled-payments-api
+  name: Secure Trust Bank Scheduled Payments API
+  description: >-
+    The Scheduled Payments API from Secure Trust Bank — 2 operation(s) for scheduled payments.
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
+  tags:
+  - Scheduled Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/secure-trust-bank-scheduled-payments-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: secure-trust-bank:secure-trust-bank-sme-api
+  name: Secure Trust Bank SME API
+  description: Endpoint for getting Unsecured SME Loan data
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
+  tags:
+  - SME
+  properties:
+  - type: OpenAPI
+    url: openapi/secure-trust-bank-sme-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: secure-trust-bank:secure-trust-bank-standing-orders-api
+  name: Secure Trust Bank Standing Orders API
+  description: The Standing Orders API from Secure Trust Bank — 2 operation(s) for standing orders.
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
+  tags:
+  - Standing Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/secure-trust-bank-standing-orders-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: secure-trust-bank:secure-trust-bank-statements-api
+  name: Secure Trust Bank Statements API
+  description: The Statements API from Secure Trust Bank — 5 operation(s) for statements.
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
+  tags:
+  - Statements
+  properties:
+  - type: OpenAPI
+    url: openapi/secure-trust-bank-statements-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: secure-trust-bank:secure-trust-bank-transactions-api
+  name: Secure Trust Bank Transactions API
+  description: The Transactions API from Secure Trust Bank — 2 operation(s) for transactions.
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
+  tags:
   - Transactions
-  - FAPI
   properties:
   - type: OpenAPI
-    url: openapi/obie-account-info-standard-openapi.yaml
+    url: openapi/secure-trust-bank-transactions-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
   - type: Documentation
     url: https://openbankinguk.github.io/read-write-api-site3/
   - type: APIReference
     url: https://github.com/OpenBankingUK/read-write-api-specs
-  - type: Overlay
-    url: overlays/secure-trust-bank-account-info-overlay.yaml
-- aid: secure-trust-bank:payment-initiation-api
-  name: Secure Trust Bank Payment Initiation API (OBIE Read/Write, PIS)
-  description: >-
-    The OBIE Read/Write Payment Initiation (PIS) API - FAPI-secured initiation of
-    domestic, scheduled, standing-order, international and file payments on behalf
-    of a consenting customer, with PSD2 strong customer authentication. Represented
-    here as the shared OBIE standard, not a proprietary Secure Trust Bank contract.
-  humanURL: https://openbankinguk.github.io/read-write-api-site3/
-  tags:
-  - Payment Initiation
-  - PIS
-  - Payments
-  - FAPI
-  properties:
-  - type: OpenAPI
-    url: openapi/obie-payment-initiation-standard-openapi.yaml
-  - type: Documentation
-    url: https://openbankinguk.github.io/read-write-api-site3/
-  - type: APIReference
-    url: https://github.com/OpenBankingUK/read-write-api-specs
-  - type: Overlay
-    url: overlays/secure-trust-bank-payment-initiation-overlay.yaml
-- aid: secure-trust-bank:confirmation-of-funds-api
-  name: Secure Trust Bank Confirmation of Funds API (OBIE Read/Write, CBPII)
-  description: >-
-    The OBIE Read/Write Confirmation of Funds (CBPII) API - FAPI-secured yes/no
-    confirmation that funds are available on an account, for card-based payment
-    instrument issuers, under PSD2 strong customer authentication. Represented here
-    as the shared OBIE standard, not a proprietary Secure Trust Bank contract.
-  humanURL: https://openbankinguk.github.io/read-write-api-site3/
-  tags:
-  - Confirmation of Funds
-  - CBPII
-  - FAPI
-  properties:
-  - type: OpenAPI
-    url: openapi/obie-confirmation-of-funds-standard-openapi.yaml
-  - type: Documentation
-    url: https://openbankinguk.github.io/read-write-api-site3/
-  - type: APIReference
-    url: https://github.com/OpenBankingUK/read-write-api-specs
-  - type: Overlay
-    url: overlays/secure-trust-bank-confirmation-of-funds-overlay.yaml
 common:
+- type: Overlay
+  url: overlays/secure-trust-bank-open-data-overlay.yaml
+- type: Overlay
+  url: overlays/secure-trust-bank-account-info-overlay.yaml
+- type: Overlay
+  url: overlays/secure-trust-bank-payment-initiation-overlay.yaml
+- type: Overlay
+  url: overlays/secure-trust-bank-confirmation-of-funds-overlay.yaml
 - type: AgenticAccess
   url: agentic-access/secure-trust-bank-agentic-access.yml
 - type: DomainSecurity
