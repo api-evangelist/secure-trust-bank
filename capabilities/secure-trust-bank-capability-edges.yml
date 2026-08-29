@@ -1,0 +1,184 @@
+slug: secure-trust-bank
+provider: Secure Trust Bank
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Banking & Capital Markets
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 18
+edges:
+- tag: Domestic Payments
+  spec_file: secure-trust-bank-domestic-payments-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.93
+  evidence: POST /domestic-payments — "Initiate a Domestic Payment"; schema OBWriteDomesticResponse5
+  reason: Operations initiate and retrieve domestic payment instructions under the Open Banking Payment
+    Initiation specification — payment initiation, not card or trading.
+- tag: Domestic Payment Consents
+  spec_file: secure-trust-bank-domestic-payment-consents-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.92
+  evidence: POST /domestic-payment-consents — "Create a Domestic Payment Consent"; "Confirm availability
+    of funds for a Domestic Payment"
+  reason: 'UK Open Banking Payment Initiation API: consent creation and funds-availability confirmation
+    are the capture/authorisation stage of a domestic payment instruction, i.e. Payment Initiation Management.'
+- tag: Domestic Scheduled Payments
+  spec_file: secure-trust-bank-domestic-scheduled-payments-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.91
+  evidence: POST /domestic-scheduled-payments — "Initiate a Domestic Scheduled Payment"
+  reason: Initiation and retrieval of scheduled domestic payment instructions via the Payment Initiation
+    API.
+- tag: Domestic Scheduled Payment Consents
+  spec_file: secure-trust-bank-domestic-scheduled-payment-consents-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.9
+  evidence: POST /domestic-scheduled-payment-consents — "Create a Domestic Scheduled Payment Consent"
+  reason: Consent capture and authorisation for a future-dated domestic payment instruction; squarely
+    payment initiation.
+- tag: Domestic Standing Order Consents
+  spec_file: secure-trust-bank-domestic-standing-order-consents-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.88
+  evidence: POST /domestic-standing-order-consents — "Create a Domestic Standing Order Consent"; schema
+    Frequency_1
+  reason: Consent/authorisation capture for recurring domestic standing order payment instructions — payment
+    initiation capability.
+- tag: Domestic Standing Orders
+  spec_file: secure-trust-bank-domestic-standing-orders-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.88
+  evidence: POST /domestic-standing-orders — "Submit a Domestic Standing Order"; schema OBWriteDomesticStandingOrder3
+  reason: Submission and retrieval of standing order payment instructions; 'Orders' here means standing
+    orders (recurring payments), not sales or trading orders.
+- tag: International Payments
+  spec_file: secure-trust-bank-international-payments-api-openapi.yml
+  capability_id: BC-1340.40
+  capability_id_l1: BC-1340
+  capability_name: Cross-Border Payment Management
+  confidence: 0.88
+  evidence: POST /international-payments — "Initiate an International Payment"; schema OBWriteInternational3
+  reason: Initiation and retrieval of international (cross-border) payment instructions, including exchange-rate/charge
+    structures, i.e. Cross-Border Payment Management.
+- tag: File Payments
+  spec_file: secure-trust-bank-file-payments-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.85
+  evidence: POST /file-payments — "Submit a File Payment"; "Get payment details for a File Payment"
+  reason: Submission of bulk payment files and retrieval of payment details/report file under Payment
+    Initiation — payment instruction capture and submission.
+- tag: International Payment Consents
+  spec_file: secure-trust-bank-international-payment-consents-api-openapi.yml
+  capability_id: BC-1340.40
+  capability_id_l1: BC-1340
+  capability_name: Cross-Border Payment Management
+  confidence: 0.85
+  evidence: POST /international-payment-consents — "Create an International Payment Consent"; "Confirm
+    Funds Availability for an International Payment"
+  reason: Consent capture for cross-border payment instructions under Open Banking Payment Initiation;
+    international scope points to Cross-Border Payment Management.
+- tag: File Payment Consents
+  spec_file: secure-trust-bank-file-payment-consents-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.82
+  evidence: POST /file-payment-consents — "Create a File Payment Consent"; "Upload a File for a ConsentId"
+  reason: Consent capture for bulk/file-based payment instructions; file upload here is the payment instruction
+    file, so this is payment initiation rather than generic file handling.
+- tag: International Scheduled Payments
+  spec_file: secure-trust-bank-international-scheduled-payments-api-openapi.yml
+  capability_id: BC-1340.40
+  capability_id_l1: BC-1340
+  capability_name: Cross-Border Payment Management
+  confidence: 0.8
+  evidence: POST /international-scheduled-payments — 'Initiate an International Scheduled Payment'
+  reason: UK Open Banking payment initiation surface for international (cross-border) payment instructions;
+    operations create and retrieve international payments, matching Cross-Border Payment Management within
+    Payments & Card Management.
+- tag: Parties
+  spec_file: secure-trust-bank-parties-api-openapi.yml
+  capability_id: BC-1300.40
+  capability_id_l1: BC-1300
+  capability_name: Customer Information Management
+  confidence: 0.8
+  evidence: '''Get Party for an AccountId'' with schemas OBParty2, PartyId, OBPostalAddress7, PhoneNumber_1,
+    LEI'
+  reason: Exposes the account holder's identity and contact data (party record), which is banking Customer
+    Information Management.
+- tag: International Scheduled Payments Consents
+  spec_file: secure-trust-bank-international-scheduled-payments-consents-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.75
+  evidence: '''Create an International Scheduled Payment Consent'' and ''Confirm Funds Availability for
+    an International Scheduled Payment'' (OBSCASupportData1)'
+  reason: Consent creation, SCA support data and funds-availability confirmation are the authorisation/validation
+    stage of payment instruction capture — Payment Initiation Management.
+- tag: International Standing Orders
+  spec_file: secure-trust-bank-international-standing-orders-api-openapi.yml
+  capability_id: BC-1340.40
+  capability_id_l1: BC-1340
+  capability_name: Cross-Border Payment Management
+  confidence: 0.75
+  evidence: POST /international-standing-orders — 'Submit an International Standing Order'
+  reason: Initiation and retrieval of recurring international payment orders (Frequency_1, OBUltimateCreditor1)
+    is cross-border payment management.
+- tag: Products
+  spec_file: secure-trust-bank-products-api-openapi.yml
+  capability_id: BC-1310.10
+  capability_id_l1: BC-1310
+  capability_name: Product Catalogue Management
+  confidence: 0.75
+  evidence: GET /products 'Get Products' with OB_Rate1_1, OB_OverdraftFeeType1Code, OB_FeeFrequency1Code_0,
+    OB_InterestCalculationMethod1Code
+  reason: Returns banking product definitions with rates, fees and interest terms for the account/product
+    catalogue — Banking Product Management, catalogue view (parameters also plausible).
+- tag: ATM
+  spec_file: secure-trust-bank-atm-api-openapi.yml
+  capability_id: BC-1300.50
+  capability_id_l1: BC-1300
+  capability_name: Banking Channels Management
+  confidence: 0.72
+  evidence: GET /atms — "Open Data ATM API", "Latest Swagger specification for OpenData"
+  reason: UK Open Data ATM locator endpoint publishes the bank's ATM estate, which is channel (ATM) information
+    under Banking Channels Management.
+- tag: Branch
+  spec_file: secure-trust-bank-branch-api-openapi.yml
+  capability_id: BC-1300.50
+  capability_id_l1: BC-1300
+  capability_name: Banking Channels Management
+  confidence: 0.72
+  evidence: GET /branches — "Open Data Branch API"
+  reason: Open Data branch locator publishing the bank's branch network, which is branch channel information
+    under Banking Channels Management.
+- tag: International Standing Orders Consents
+  spec_file: secure-trust-bank-international-standing-orders-consents-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.72
+  evidence: '''Create an International Standing Order Consent'' with OBSCASupportData1 and OBInternalConsentStatus2Code'
+  reason: Consent/authorisation capture preceding an international standing order instruction — payment
+    instruction authorisation, i.e. Payment Initiation Management.

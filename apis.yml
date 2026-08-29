@@ -663,6 +663,9 @@ apis:
   - type: APIReference
     url: https://github.com/OpenBankingUK/read-write-api-specs
 common:
+- type: CapabilityMap
+  url: capabilities/secure-trust-bank-capability-edges.yml
+  name: Secure Trust Bank Business Capability Map
 - type: Overlay
   url: overlays/secure-trust-bank-open-data-overlay.yaml
 - type: Overlay
