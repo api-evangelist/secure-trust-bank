@@ -82,6 +82,8 @@ apis:
   description: The Accounts API from Secure Trust Bank — 2 operation(s) for accounts.
   humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
   tags:
+  - Account
+  tags_raw:
   - Accounts
   properties:
   - type: OpenAPI
@@ -564,6 +566,8 @@ apis:
   description: The Products API from Secure Trust Bank — 2 operation(s) for products.
   humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
   tags:
+  - Product
+  tags_raw:
   - Products
   properties:
   - type: OpenAPI
@@ -650,6 +654,8 @@ apis:
   description: The Transactions API from Secure Trust Bank — 2 operation(s) for transactions.
   humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/
   tags:
+  - Transaction
+  tags_raw:
   - Transactions
   properties:
   - type: OpenAPI
